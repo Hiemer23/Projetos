@@ -9,4 +9,4 @@ link para API: https://pokeapi.co/
 - Firebrick: #BB0A21
 - Floral White: #FFF8F0
 - Cadet Blue: #56A3A6
-- Cadet: #6F6D74
+- Cadet: #4F6D74

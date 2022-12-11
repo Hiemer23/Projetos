@@ -11,21 +11,27 @@
     <header>
         <!-- Navigation bar-->
         <nav>
-            <img class="logo" src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="Logo" />
+            <img id="logo" src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="Logo" />
             <form autocomplete="off">
-                <input type="text" id="input" placeholder="Digite o nome do pokémon" />
+                <input id="input" type="text" autofocus placeholder="Digite o nome do pokémon" />
                 <ul class="list"></ul>
             </form>
         </nav>
     </header>
     <!-- main content -->
     <main>
-        <div class="corpo">
-            <p id="csv"></p>
-        </div>
-    
-        <!--Script-->
+        <section>
+            <div class="corpo">
+                <p id="csv"></p>
+            </div>
+        </section>
+        <!--Script-->                    
         <script src="script.js"></script>
     </main>
+    <footer>
+        <p>Created by</p>
+        <p>Andrey Hiemer</p>
+        <p>Lucas Nunes</p>
+    </footer>
 </body>
 </html>
