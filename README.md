@@ -5,8 +5,8 @@ Trata-se de um projeto a fim de praticar os conhecimentos de JS, implementando u
 link para API: https://pokeapi.co/
 
 ### Cores
-Rich Black FOGRA 39: #08090C
-Firebrick: #BB0A21
-Floral White: #FFF8F0
-Cadet Blue: #56A3A6
-Cadet: #6F6D74
+- Rich Black FOGRA 39: #08090C
+- Firebrick: #BB0A21
+- Floral White: #FFF8F0
+- Cadet Blue: #56A3A6
+- Cadet: #6F6D74
