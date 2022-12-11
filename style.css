@@ -1,11 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-.type1-Grass,.type2-Grass{
-    color:rgb(54, 145, 54)
+.type1-Normal,.type2-Normal{
+    color:#aa9
 }
 .type1-Fire,.type2-Fire{
-    color:red
+    color:#f42
 }
+.type1-Water,.type2-Water{
+    color:#39f
+}
+.type1-Electric,.type2-Electric{
+    color:#fc3
+}
+.type1-Grass,.type2-Grass{
+    color:#7c5
+}
+.type1-Ice,.type2-Ice{
+    color:#6cf
+}
+.type1-Fighting,.type2-Fighting{
+    color:#b54
+}
+.type1-Poison,.type2-Poison{
+    color:#a59
+}
+.type1-Ground,.type2-Ground{
+    color:#db5
+}
+.type1-Flying,.type2-Flying{
+    color:#89f
+}
+.type1-Psychic,.type2-Psychic{
+    color:#f59
+}
+.type1-Bug,.type2-Bug{
+    color:#ab2
+}
+.type1-Rock,.type2-Rock{
+    color:#ba6
+}
+.type1-Ghost,.type2-Ghost{
+    color:#66b
+}
+.type1-Dragon,.type2-Dragon{
+    color:#76e
+}
+.type1-Dark,.type2-Dark{
+    color:#754
+}
+.type1-Steel,.type2-Steel{
+    color:#aab
+}
+.type1-Fairy,.type2-Fairy{
+    color:#e9e
+}
+
 
 :root {
     --black: #08090C;
@@ -83,4 +132,7 @@ footer {
     padding: 0.5rem 0;
     color: var(--white);
     background-color: var(--black);
+}
+p{
+    text-align: center;
 }
