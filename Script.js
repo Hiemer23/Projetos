@@ -212,12 +212,12 @@ async function getData() {
     const response = await fetch(url);
     const rawData = await response.text();
     const resultado = rawData.split("/")
-    
+
     for (let i in resultado) {
         pokemons[i] = resultado[i].split(";")
     }
     pokemons.forEach((pokemon) => {
-        stringPokemons += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><div class="nome">${pokemon[1]}</div></li>`
+        stringPokemons += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1">${pokemon[2]}</p><p class="type2">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
     })
     document.getElementById("csv").innerHTML = stringPokemons;
     //resultado.forEach(a => document.getElementById("csv").innerHTML = a)
@@ -227,7 +227,9 @@ async function getData() {
 let stringPokemons1 = ""
 function addPoke(poke) {
     pokemons.forEach((pokemon) => {
-        if (pokemon[1]==poke) stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><div class="nome">${pokemon[1]}</div></li>`
+        if (pokemon[1] == poke) {
+            stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1">${pokemon[2]}</p><p class="type2">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
+        }
     })
     document.getElementById("csv").innerHTML = stringPokemons1;
     //console.log(stringPokemons1)
