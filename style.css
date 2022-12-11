@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+.type1-Grass,.type2-Grass{
+    color:rgb(54, 145, 54)
+}
+.type1-Fire,.type2-Fire{
+    color:red
+}
+
 :root {
     --black: #08090C;
     --red: #BB0A21;
