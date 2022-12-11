@@ -182,7 +182,7 @@ input.addEventListener("keyup", (e) => {
             //display the value in array
             listItem.innerHTML = word;
             //console.log(listItem)
-            addPoke(i)
+            addPoke(word)
             document.querySelector(".list").appendChild(listItem);
         }
         else if (input.value == "") {
@@ -227,7 +227,7 @@ async function getData() {
 let stringPokemons1 = ""
 function addPoke(poke) {
     pokemons.forEach((pokemon) => {
-        if (pokemon[1].includes(poke)) stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><div class="nome">${pokemon[1]}</div></li>`
+        if (pokemon[1]==poke) stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><div class="nome">${pokemon[1]}</div></li>`
     })
     document.getElementById("csv").innerHTML = stringPokemons1;
     //console.log(stringPokemons1)
