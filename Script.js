@@ -1,29 +1,29 @@
 let names = [
-    "Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard",
-    "Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree",
-    "Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot",
-    "Rattata","Raticate","Spearow","Fearow","Ekans","Arbok",
-    "Pikachu","Raichu","Sandshrew","Sandslash","Nidoranâ™€","Nidorina",
-    "Nidoqueen","Nidoranâ™‚","Nidorino","Nidoking","Clefairy","Clefable",
-    "Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat",
-    "Oddish","Gloom","Vileplume","Paras","Parasect","Venonat",
-    "Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck",
-    "Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag",
-    "Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop",
-    "Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool",
-    "Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash",
-    "Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo",
-    "Dodrio","Seel","Dewgong","Grimer","Muk","Shellder",
-    "Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee",
-    "Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute",
-    "Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung",
-    "Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela",
-    "Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu",
-    "Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar",
-    "Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto",
-    "Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte",
-    "Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno",
-    "Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"
+    "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard",
+    "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree",
+    "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot",
+    "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok",
+    "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoranâ™€", "Nidorina",
+    "Nidoqueen", "Nidoranâ™‚", "Nidorino", "Nidoking", "Clefairy", "Clefable",
+    "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat",
+    "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat",
+    "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck",
+    "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag",
+    "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop",
+    "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool",
+    "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash",
+    "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo",
+    "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder",
+    "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee",
+    "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute",
+    "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung",
+    "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela",
+    "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu",
+    "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar",
+    "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto",
+    "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte",
+    "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno",
+    "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"
 ];
 // end of the names
 const url = "https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project2.csv"
@@ -92,7 +92,7 @@ async function getData() {
         pokemons[i] = resultado[i].split(";")
     }
     pokemons.forEach((pokemon) => {
-        stringPokemons += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1">${pokemon[2]}</p><p class="type2">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
+        stringPokemons += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1-${pokemon[2]}">${pokemon[2]}</p><p class="type2-${pokemon[3]}">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
     })
     document.getElementById("csv").innerHTML = stringPokemons;
     //resultado.forEach(a => document.getElementById("csv").innerHTML = a)
@@ -103,7 +103,7 @@ let stringPokemons1 = ""
 function addPoke(poke) {
     pokemons.forEach((pokemon) => {
         if (pokemon[1] == poke) {
-            stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1">${pokemon[2]}</p><p class="type2">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
+            stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1-${pokemon[2]}">${pokemon[2]}</p><p class="type2-${pokemon[3]}">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
         }
     })
     document.getElementById("csv").innerHTML = stringPokemons1;
