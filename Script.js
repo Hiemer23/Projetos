@@ -34,18 +34,16 @@ let stringPokemons = ""
 let sortedNames = names.sort();
 //reference
 let input = document.getElementById("input");
+let search = document.getElementById('search');
 //Execute function on keyup
 input.addEventListener("keyup", (e) => {
     //loop through above array
     //Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
     removeElements();
-    removePoke();
+    //removePoke();
     for (let i of sortedNames) {
         //convert input to lowercase and compare with each string
-        if (
-            i.toLowerCase().startsWith(input.value.toLowerCase()) &&
-            input.value != ""
-        ) {
+        if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != "") {
             //create li element
             let listItem = document.createElement("li");
             //One common class name
@@ -58,17 +56,27 @@ input.addEventListener("keyup", (e) => {
             //display the value in array
             listItem.innerHTML = word;
             //console.log(listItem)
-            addPoke(word)
+            //addPoke(word)
             document.querySelector(".list").appendChild(listItem);
-        }
-        else if (input.value == "") {
-            removePoke()
         }
     }
 });
+search.addEventListener("submit", e => {
+     e.preventDefault()
+    // e.stopPropagation()
+    for (let i of sortedNames) {
+        if (i.toLowerCase() == input.value.toLowerCase()) {
+            addPoke(i)
+            console.log(i)
+        }
+    }
+});
+
 function displayNames(value) {
     input.value = value;
+    addPoke(value)
     removeElements();
+    input.value = ""
 }
 function removeElements() {
     //clear all the item
@@ -76,7 +84,6 @@ function removeElements() {
     items.forEach((item) => {
         item.remove();
     });
-    stringPokemons1 = ""
     // items2 = document.querySelectorAll(".lista");
     // items2.forEach((item) => {
     //     item.remove();
@@ -102,8 +109,6 @@ async function getData() {
     //document.getElementById("csv").innerHTML=resultado;
 
 }
-let stringPokemons1 = ""
-
 function addPoke(poke) {
     let tag = document.getElementById(poke)
     if (tag == undefined) {
@@ -114,10 +119,10 @@ function addPoke(poke) {
 
 function removePoke() {
     let tags = document.querySelectorAll('.lista')
-    tags.forEach(tag=>{
+    tags.forEach(tag => {
         //console.log(tag.getAttribute('show'))
-        if(tag.getAttribute('show')!="true"){
-            tag.setAttribute('show',false)
+        if (tag.getAttribute('show') != true) {
+            tag.setAttribute('show', false)
         }
     })
 }
