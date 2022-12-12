@@ -1,119 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-.type1-Normal,
-.type2-Normal {
-    color: #aa9
-}
-
-.type1-Fire,
-.type2-Fire {
-    color: #f42
-}
-
-.type1-Water,
-.type2-Water {
-    color: #39f
-}
-
-.type1-Electric,
-.type2-Electric {
-    color: #fc3
-}
-
-.type1-Grass,
-.type2-Grass {
-    color: #7c5
-}
-
-.type1-Ice,
-.type2-Ice {
-    color: #6cf
-}
-
-.type1-Fighting,
-.type2-Fighting {
-    color: #b54
-}
-
-.type1-Poison,
-.type2-Poison {
-    color: #a59
-}
-
-.type1-Ground,
-.type2-Ground {
-    color: #db5
-}
-
-.type1-Flying,
-.type2-Flying {
-    color: #89f
-}
-
-.type1-Psychic,
-.type2-Psychic {
-    color: #f59
-}
-
-.type1-Bug,
-.type2-Bug {
-    color: #ab2
-}
-
-.type1-Rock,
-.type2-Rock {
-    color: #ba6
-}
-
-.type1-Ghost,
-.type2-Ghost {
-    color: #66b
-}
-
-.type1-Dragon,
-.type2-Dragon {
-    color: #76e
-}
-
-.type1-Dark,
-.type2-Dark {
-    color: #754
-}
-
-.type1-Steel,
-.type2-Steel {
-    color: #aab
-}
-
-.type1-Fairy,
-.type2-Fairy {
-    color: #e9e
-}
-
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
 :root {
     --black: #08090C;
     --red: #BB0A21;
     --white: #FFF8F0;
     --cadet-blue: #56A3A6;
     --cadet: #4F6D74;
-    --lightgrey: #d3d3d3;
+    --lightgrey: #f0f0f0;
+    --nameColor: #2769be;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/*Type colors*/
+.type1-Normal,
+.type2-Normal {
+    color: #91918c
+}
+
+.type1-Fire,
+.type2-Fire {
+    color: #ff4422
+}
+
+.type1-Water,
+.type2-Water {
+    color: #3399ff
+}
+
+.type1-Electric,
+.type2-Electric {
+    color: #dfa702
+}
+
+.type1-Grass,
+.type2-Grass {
+    color: #77cc55
+}
+
+.type1-Ice,
+.type2-Ice {
+    color: #66ccff
+}
+
+.type1-Fighting,
+.type2-Fighting {
+    color: #bb5544
+}
+
+.type1-Poison,
+.type2-Poison {
+    color: #aa5599
+}
+
+.type1-Ground,
+.type2-Ground {
+    color: #5a4504
+}
+
+.type1-Flying,
+.type2-Flying {
+    color: #8899ff
+}
+
+.type1-Psychic,
+.type2-Psychic {
+    color: #ff5599
+}
+
+.type1-Bug,
+.type2-Bug {
+    color: #aabb22
+}
+
+.type1-Rock,
+.type2-Rock {
+    color: #a08e48
+}
+
+.type1-Ghost,
+.type2-Ghost {
+    color: #6666bb
+}
+
+.type1-Dragon,
+.type2-Dragon {
+    color: #7766ee
+}
+
+.type1-Dark,
+.type2-Dark {
+    color: #775544
+}
+
+.type1-Steel,
+.type2-Steel {
+    color: #aaaabb
+}
+
+.type1-Fairy,
+.type2-Fairy {
+    color: #ee99ee
 }
 
 body {
     background-color: var(--lightgrey);
-}
-
-nav,
-main {
-    padding: 1% 5% 1% 5%;
 }
 
 nav {
@@ -124,52 +119,14 @@ nav {
     border-bottom: solid 5px var(--red);
 }
 
-#logo {
+nav img {
     max-width: 8rem;
     max-height: 3.5rem;
 }
 
-
-ul,
-.corpo li {
-    z-index: -1;
-    list-style: none;
-}
-
-#csv {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.nome,
-.position {
-    text-align: center;
-    display: block;
-}
-
-footer {
-    text-align: center;
-    border-top: solid 5px var(--red);
-    padding: 0.5rem 0;
-    color: var(--white);
-    background-color: var(--black);
-}
-
-p {
-    text-align: center;
-}
-
-[show=false] img {
-    filter: brightness(0)
-}
-
-[show=false]>.nome {
-    visibility: hidden;
-}
-
-[show=true] {
-    display: block
+nav,
+main {
+    padding: 1% 5% 1% 5%;
 }
 
 input[type=text] {
@@ -192,4 +149,65 @@ input[type=text] {
 .list-items:hover {
     z-index: 2;
     background-color: #dddddd;
+}
+
+#sectionPokemon {
+    display: flex;
+    justify-content: center;
+}
+
+.corpo {
+    max-width: 650px;
+}
+
+ul,
+.corpo li {
+    z-index: -1;
+    list-style: none;
+}
+
+#csv {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nome {
+    font-weight: 700;
+    color: var(--nameColor);
+}
+
+.position {
+    color: #838383;
+    font-size: 0.9rem;
+}
+
+.nome,
+.position {
+    text-align: center;
+    display: block;
+}
+
+p {
+    text-align: center;
+}
+
+[show=false] img {
+    filter: brightness(0)
+}
+
+[show=false]>.nome {
+    visibility: hidden;
+}
+
+[show=true] {
+    display: block
+}
+
+footer {
+    text-align: center;
+    border-top: solid 5px var(--red);
+    padding: 0.5rem 0;
+    color: var(--white);
+    background-color: var(--black);
 }
