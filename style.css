@@ -114,9 +114,11 @@ ul, .corpo li {
     flex-wrap: wrap;
 }
 
-.nome {
+.nome,.position{
     text-align: center;
+    display: block;
 }
+
 
 .list-items {
     padding: 10px 5px;
@@ -135,4 +137,10 @@ footer {
 }
 p{
     text-align: center;
+}
+[show=false] img{
+    filter:brightness(0)
+}
+[show=true]{
+    display:block
 }
