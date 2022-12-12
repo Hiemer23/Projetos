@@ -39,6 +39,7 @@ input.addEventListener("keyup", (e) => {
     //loop through above array
     //Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
     removeElements();
+    removePoke();
     for (let i of sortedNames) {
         //convert input to lowercase and compare with each string
         if (
@@ -61,7 +62,7 @@ input.addEventListener("keyup", (e) => {
             document.querySelector(".list").appendChild(listItem);
         }
         else if (input.value == "") {
-            document.getElementById("csv").innerHTML = stringPokemons;
+            removePoke()
         }
     }
 });
@@ -76,11 +77,13 @@ function removeElements() {
         item.remove();
     });
     stringPokemons1 = ""
-    items2 = document.querySelectorAll(".lista");
-    items2.forEach((item) => {
-        item.remove();
-    });
+    // items2 = document.querySelectorAll(".lista");
+    // items2.forEach((item) => {
+    //     item.remove();
+    // });
 }
+
+
 
 async function getData() {
 
@@ -92,7 +95,7 @@ async function getData() {
         pokemons[i] = resultado[i].split(";")
     }
     pokemons.forEach((pokemon) => {
-        stringPokemons += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1-${pokemon[2]}">${pokemon[2]}</p><p class="type2-${pokemon[3]}">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
+        stringPokemons += `<li class="lista" id = "${pokemon[1]}" show = "false"><img src="${urlImages + pokemon[0]}.png"><a class="position">${pokemon[0]}</a><a class="nome">${pokemon[1]}</a><a class="type1-${pokemon[2]}">${pokemon[2]}</a><a class="type2-${pokemon[3]}">${pokemon[3]}</a></li>`
     })
     document.getElementById("csv").innerHTML = stringPokemons;
     //resultado.forEach(a => document.getElementById("csv").innerHTML = a)
@@ -100,15 +103,23 @@ async function getData() {
 
 }
 let stringPokemons1 = ""
+
 function addPoke(poke) {
-    pokemons.forEach((pokemon) => {
-        if (pokemon[1] == poke) {
-            stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><p class="position">${pokemon[0]}</p><p class="type1-${pokemon[2]}">${pokemon[2]}</p><p class="type2-${pokemon[3]}">${pokemon[3]}</p><p class="nome">${pokemon[1]}</p></li>`
+    let tag = document.getElementById(poke)
+    if (tag == undefined) {
+        return
+    }
+    tag.setAttribute('show', true)
+}
+
+function removePoke() {
+    let tags = document.querySelectorAll('.lista')
+    tags.forEach(tag=>{
+        //console.log(tag.getAttribute('show'))
+        if(tag.getAttribute('show')!="true"){
+            tag.setAttribute('show',false)
         }
     })
-    document.getElementById("csv").innerHTML = stringPokemons1;
-    //console.log(stringPokemons1)
 }
 
 getData();
-
