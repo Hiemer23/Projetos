@@ -25,45 +25,39 @@ let names = [
     "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno",
     "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"
 ];
-// end of the names
 const url = "https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project2.csv"
 const urlImages = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
 const pokemons = []
 let stringPokemons = ""
-//Sort names in ascending order
+//Sort de nomes em ordem crescente
 let sortedNames = names.sort();
-//reference
+
+//elemento input
 let input = document.getElementById("input");
+//elemento form com id = search
 let search = document.getElementById('search');
-//Execute function on keyup
+//evento relacionado ao input
 input.addEventListener("keyup", (e) => {
-    //loop through above array
-    //Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
+    //limpa todos os elementos da lista antes de verificar o que foi escrito no input
     removeElements();
-    //removePoke();
     for (let i of sortedNames) {
-        //convert input to lowercase and compare with each string
         if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != "") {
-            //create li element
             let listItem = document.createElement("li");
-            //One common class name
+            
             listItem.classList.add("list-items");
             listItem.style.cursor = "pointer";
             listItem.setAttribute("onclick", "displayNames('" + i + "')");
-            //Display matched part in bold
             let word = i.substr(0, input.value.length);
             word += i.substr(input.value.length);
-            //display the value in array
             listItem.innerHTML = word;
-            //console.log(listItem)
-            //addPoke(word)
             document.querySelector(".list").appendChild(listItem);
         }
     }
 });
+//evento relacionado ao form
 search.addEventListener("submit", e => {
-     e.preventDefault()
-    // e.stopPropagation()
+    //evitar de sair da página ao apertar enter
+    e.preventDefault()
     for (let i of sortedNames) {
         if (i.toLowerCase() == input.value.toLowerCase()) {
             addPoke(i)
@@ -72,28 +66,26 @@ search.addEventListener("submit", e => {
     }
 });
 
+//atualiza os nomes da lista
 function displayNames(value) {
     input.value = value;
+
     addPoke(value)
     removeElements();
     input.value = ""
 }
+//remove os nomes da lista
 function removeElements() {
-    //clear all the item
     let items = document.querySelectorAll(".list-items");
+
     items.forEach((item) => {
         item.remove();
     });
-    // items2 = document.querySelectorAll(".lista");
-    // items2.forEach((item) => {
-    //     item.remove();
-    // });
 }
 
 
-
+//inicializa todos os pokemons no sistema
 async function getData() {
-
     const response = await fetch(url);
     const rawData = await response.text();
     const resultado = rawData.split("/")
@@ -105,26 +97,16 @@ async function getData() {
         stringPokemons += `<li class="lista" id = "${pokemon[1]}" show = "false"><img src="${urlImages + pokemon[0]}.png"><a class="position">${pokemon[0]}</a><a class="nome">${pokemon[1]}</a><a class="type1-${pokemon[2]}">${pokemon[2]}</a><a class="type2-${pokemon[3]}">${pokemon[3]}</a></li>`
     })
     document.getElementById("csv").innerHTML = stringPokemons;
-    //resultado.forEach(a => document.getElementById("csv").innerHTML = a)
-    //document.getElementById("csv").innerHTML=resultado;
-
 }
+//muda o atributo show para true quando chamada
 function addPoke(poke) {
     let tag = document.getElementById(poke)
+
     if (tag == undefined) {
         return
     }
     tag.setAttribute('show', true)
 }
 
-function removePoke() {
-    let tags = document.querySelectorAll('.lista')
-    tags.forEach(tag => {
-        //console.log(tag.getAttribute('show'))
-        if (tag.getAttribute('show') != true) {
-            tag.setAttribute('show', false)
-        }
-    })
-}
-
+//pega todos os dados dos pokemons
 getData();
