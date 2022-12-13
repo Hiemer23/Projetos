@@ -200,7 +200,43 @@ p , footer{
     filter: brightness(0)
 }
 
-[show=false]>.nome {
+[show=false]>.nome,
+[show=false]>.type1-Normal,
+[show=false]>.type2-Normal,
+[show=false]>.type1-Fire,
+[show=false]>.type2-Fire,
+[show=false]>.type1-Water,
+[show=false]>.type2-Water,
+[show=false]>.type1-Electric,
+[show=false]>.type2-Electric ,
+[show=false]>.type1-Grass,
+[show=false]>.type2-Grass ,
+[show=false]>.type1-Ice,
+[show=false]>.type2-Ice,
+[show=false]>.type1-Fighting,
+[show=false]>.type2-Fighting,
+[show=false]>.type1-Poison,
+[show=false]>.type2-Poison,
+[show=false]>.type1-Ground,
+[show=false]>.type2-Ground,
+[show=false]>.type1-Flying,
+[show=false]>.type2-Flying,
+[show=false]>.type1-Psychic,
+[show=false]>.type2-Psychic,
+[show=false]>.type1-Bug,
+[show=false]>.type2-Bug,
+[show=false]>.type1-Rock,
+[show=false]>.type2-Rock,
+[show=false]>.type1-Ghost,
+[show=false]>.type2-Ghost,
+[show=false]>.type1-Dragon,
+[show=false]>.type2-Dragon,
+[show=false]>.type1-Dark,
+[show=false]>.type2-Dark,
+[show=false]>.type1-Steel,
+[show=false]>.type2-Steel,
+[show=false]>.type1-Fairy,
+[show=false]>.type2-Fairy {
     visibility: hidden;
 }
 
