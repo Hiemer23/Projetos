@@ -141,9 +141,10 @@ input[type=text] {
 }
 
 .list-items {
-    z-index: 2;
+    position:relative;
+    z-index: 2; 
     padding: 10px 5px;
-    background-color: var(--white);
+    background-color:#fff;
 }
 
 .list-items:hover {
